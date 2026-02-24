@@ -1,3 +1,4 @@
+
 setup = function() {
     size(400, 400);    
 };
@@ -14,8 +15,36 @@ draw = function() {
     text("Press me!", 145, 115);
 
     if(mousePressed){
-        labelCanvas();
+        if (mouseX > 0 && mouseY < 200) {
+            fill(255,0,0);
+            rect(0, 0, 400, 200);  
+
+            fill(0, 0, 0);
+            textSize(30);
+            text("Pressed!", 145, 115);
+            labelCanvas();   
+        }
+
+        if (mouseX > 0 && mouseY > 200) {
+            fill(0, 255, 68); 
+            rect(0, 0, 400, 200);  
+
+            fill(0, 0, 0);
+            textSize(30);
+            text("Press me!", 145, 115);
+        }
     }
+
+   
+    textSize(50);
+    text("🦆", 170, 365);
+
+     if(dist(mouseX, mouseY, 180, 355)< 20){
+        fill(0,0,0);
+        textSize(30);
+        text("quack", 160,300);
+     }
+
 };
 
 var labelCanvas = function(){
